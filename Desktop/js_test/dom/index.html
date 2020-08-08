@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/app.css" />
+    <style>
+      .red {
+        color: red;
+      }
+      .blue {
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="test"></div>
+    <!-- <button id="target" onclick="change_color()">推してね</button> -->
+    <button id="target">推してね</button>
+
+    <script>
+      // 3つ目 イベントリスナー　好ましい書方
+      const target = document.getElementById("target");
+      target.addEventListener("click", (e) => {
+        console.log(e);
+        const test = document.getElementById("test");
+        test.textContent = "テストおお";
+        test.classList.add("red");
+      });
+      //   function change_color() {
+      //     const test = document.getElementById("test");
+      //     test.textContent = "テストおお";
+      //     test.classList.add("red");
+      //   } 1つ目使わない。　HTMLのタグ内に書くと分かりにくい
+
+      //   document.getElementById("target").onclick = function () {
+      //     const test = document.getElementById("test");
+      //     test.textContent = "テストおお";
+      //     test.classList.add("red");
+      //   };　2つ目。　次にonclickすると、後のほうのonclickしか実行されない。
+
+      // 39
+      //   const divList = document.getElementById("divList").firstElementChild;
+      //   const targetList = document.querySelector(".div2").firstElementChild;
+      //   const newElement = document.createElement("div").nextElementSibling;
+      //   console.log(targetList);
+
+      //   const target = document.getElementById("target");
+      //   const newDiv = document.createElement("div");
+
+      //   newDiv.id = "test";
+      //   newDiv.classList.add("red");
+      //   newDiv.textContent = "テスト";
+      //   //   target.appendChild(newDiv);
+      //   target.parentNode.appendChild(newDiv);
+      // 38
+      // const input = document.getElementById("test");
+      // input.type = "text";
+      // input.placeholder = "ああ"
+      // input.name = "test";
+      // input.textContent ="テストです"
+      // // input.setAttribute("type","text") 推奨されてない書方
+      // console.log(input);
+
+      // const anchor = document.createElement('a')
+      // console.log(anchor);
+      // anchor.href = "http://google.com";
+      // anchor.target = "_blank"
+      // anchor.aa = "test"; ない値は追加されない
+
+      // 37 classList
+      //   const test = document.getElementById("test");
+      //   document.getElementById("test").classList.add("red");
+      //   test.classList.add("red");
+      //   //   返り値　Element.classList.toggle
+      //   const testList = document.querySelector(".test_list");
+      //   testList.classList.remove("blue");
+      //   //   返り値　Element
+
+      //   const testLists = document.querySelectorAll(".test_list");
+
+      //   console.log(test);
+      //   console.log(testLists);
+    </script>
+  </body>
+</html>
